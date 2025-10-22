@@ -13,14 +13,16 @@ namespace Ciurdarean_Patricia_Lab2.Models
 
         [Column(TypeName = "decimal(6, 2)")]
         public decimal Price { get; set; }
-
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
-        public int? PublisherID { get; set; }
-        public Publisher? Publisher { get; set; }
-        [Display(Name = "Author")]
         public int? AuthorID { get; set; }
-        public Author? Author { get; set; } 
+        public Author? Author { get; set; }
+
+        public int? PublisherID { get; set; }
+
+        public Publisher? Publisher { get; set; }
+
+        public ICollection<BookCategory>? BookCategories { get; set; }
 
     }
 }
